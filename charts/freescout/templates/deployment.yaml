@@ -113,26 +113,26 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-          livenessProbe:
-            initialDelaySeconds: 20
-            httpGet:
-              path: /login
-              port: http
-              {{- if .Values.freescout.enable_ssl_proxy }}
-              httpHeaders:
-                - name: X-Forwarded-Proto
-                  value: https
-              {{- end }}
-          readinessProbe:
-            initialDelaySeconds: 20
-            httpGet:
-              path: /login
-              port: http
-              {{- if .Values.freescout.enable_ssl_proxy }}
-              httpHeaders:
-                - name: X-Forwarded-Proto
-                  value: https
-              {{- end }}
+          # livenessProbe:
+          #   initialDelaySeconds: 20
+          #   httpGet:
+          #     path: /login
+          #     port: http
+          #     {{- if .Values.freescout.enable_ssl_proxy }}
+          #     httpHeaders:
+          #       - name: X-Forwarded-Proto
+          #         value: https
+          #     {{- end }}
+          # readinessProbe:
+          #   initialDelaySeconds: 20
+          #   httpGet:
+          #     path: /login
+          #     port: http
+          #     {{- if .Values.freescout.enable_ssl_proxy }}
+          #     httpHeaders:
+          #       - name: X-Forwarded-Proto
+          #         value: https
+          #     {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
