@@ -7,7 +7,7 @@ Chart is using `tiredofit/freescout` container image -  https://github.com/tired
 ## Usage
 
 ```
-helm repo add soultrace https://charts.soultrace.net
+helm repo add battlesbit https://battlesbit.github.io/helm-charts/
 helm repo update
-helm install freescout soultrace/freescout
+helm install freescout battlesbit/freescout
 ```
